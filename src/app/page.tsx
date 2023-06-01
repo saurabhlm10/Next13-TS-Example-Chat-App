@@ -8,7 +8,7 @@ export default function Home() {
   const [newMessage, setNewMessage] = useState("");
 
   const sendMessage = async () => {
-    await axios.post("/api/send", { text: newMessage });
+    await axios.post("/api/send", { 'text': newMessage });
     setNewMessage("");
   };
   return (
