@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
     console.log('TEXT',text)
 
-    pusherServer.trigger("chat", "incoming-message", text);
+    pusherServer.trigger("chat", "incoming-message", {text});
 
     console.log('POST3')
 
