@@ -1,6 +1,7 @@
 "use client";
 
 import Messages from "@/components/Messages";
+import { pusherServer } from "@/lib/pusher";
 import axios from "axios";
 import { useState } from "react";
 
@@ -8,7 +9,9 @@ export default function Home() {
   const [newMessage, setNewMessage] = useState("");
 
   const sendMessage = async () => {
-    await axios.post("/api/send", { text : newMessage });
+    pusherServer.trigger("chat", "incoming-message", { text: newMessage });
+
+    // await axios.post("/api/send", { text : newMessage });
     setNewMessage("");
   };
   return (
