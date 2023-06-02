@@ -8,10 +8,6 @@ interface MessagesProps {}
 const Messages: FC<MessagesProps> = ({}) => {
   const [messages, setMessages] = useState<Text[]>([]);
 
-  console.log(process.env.PUSHER_APP_ID);
-  console.log(process.env.NEXT_PUBLIC_PUSHER_APP_KEY);
-  console.log(process.env.PUSHER_APP_SECRET);
-
   useEffect(() => {
     const handleMessage = (message: Text) => {
       console.log(message);

@@ -4,7 +4,7 @@ export async function POST(req: Request) {
   try {
     console.log("POST1");
 
-    const { text } = await req.json();
+    const { text }: { text: string } = await req.json();
 
     console.log("POST2");
 
