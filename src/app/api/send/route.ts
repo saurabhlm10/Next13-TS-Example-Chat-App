@@ -10,6 +10,9 @@ export async function POST(req: Request) {
 
     console.log("TEXT", text);
 
+
+    console.log(process.env.NEXT_PUBLIC_PUSHER_APP_KEY)
+
     pusherServer.trigger("chat", "incoming-message", { text });
 
     console.log("POST3");
